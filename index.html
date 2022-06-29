@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <title>TMR Calculator</title>
+  </head>
+  <body>
+    <figure class="text-center"><h1>Making Rooms Cost Calculator</h1></figure>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="Fortus-tab" data-bs-toggle="tab" data-bs-target="#Fortus" type="button" role="tab" aria-controls="Fortus" aria-selected="true">Fortus</button>
+        </li>
+
+
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="Form-tab" data-bs-toggle="tab" data-bs-target="#Form" type="button" role="tab" aria-controls="Form" aria-selected="false">Form</button>
+        </li>
+
+
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="Ultimaker-tab" data-bs-toggle="tab" data-bs-target="#Ultimaker" type="button" role="tab" aria-controls="Ultimaker" aria-selected="false">Ultimaker</button>
+        </li>
+
+
+      </ul>
+
+
+      <div class="tab-content" id="myTabContent">
+
+        <!-- Fortus Tab-->
+        <div style="margin: 5px; padding:10px; border-style: solid; border-width: 1px; border-radius: 5px; border-color: black;" class="tab-pane fade show active" id="Fortus" role="tabpanel" aria-labelledby="home-tab">
+            <h5>Select Material: </h5><ul style="margin: 10px;" class="nav nav-pills mb-3" id="pills-tab" role="tablist">           
+                <li  class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pills-nylon12-tab" data-bs-toggle="pill" data-bs-target="#pills-nylon12" type="button" role="tab" aria-controls="pills-nylon12" aria-selected="true">Nylon 12</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-pc10-tab" data-bs-toggle="pill" data-bs-target="#pills-pc10" type="button" role="tab" aria-controls="pills-pc10" aria-selected="false">PC10</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-asanatural-tab" data-bs-toggle="pill" data-bs-target="#pills-asanatural" type="button" role="tab" aria-controls="pills-asanatural" aria-selected="false">ASA Natural</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-absm30-tab" data-bs-toggle="pill" data-bs-target="#pills-absm30" type="button" role="tab" aria-controls="pills-absm30" aria-selected="false">ABS M30</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-1010cg-tab" data-bs-toggle="pill" data-bs-target="#pills-1010cg" type="button" role="tab" aria-controls="pills-1010cg" aria-selected="false">1010 CG</button>
+                </li>
+                <div style="margin-top: 10px;" class="tab-content" id="pills-tabContent">
+                      <div class="tab-pane fade show active" id="pills-nylon12" role="tabpanel" aria-labelledby="pills-home-tab">FDM Nylon 12 combines the benefits of Nylon 12 with the design freedom and reliability of FDM 3D printing. Prototype faster and for less cost than injection molding using the same material as your production parts, with one of industry’s most widely used engineering thermoplastics.</div>
+                      <div class="tab-pane fade" id="pills-pc10" role="tabpanel" aria-labelledby="pills-profile-tab">Polycarbonate 3D printing filament is a strong, dimensionally stable, heat resistant plastic with good impact strength. Its stiffness and stability mean the parts you print retain their shape and dimensional accuracy. High impact strength makes this a tough material, suitable for high-durability applications like functional prototyping and manufacturing tooling.</div>
+                      <div class="tab-pane fade" id="pills-asanatural" role="tabpanel" aria-labelledby="pills-contact-tab">ASA filament (acrylonitrile styrene acrylate) is the perfect all-purpose 3D printing thermoplastic, suitable for many different applications. It has a similar chemical makeup to ABS plastic but offers three improvements: better mechanical properties, superior aesthetics and it’s UV resistant. ASA material also comes in 10 colors, more than any other FDM material.</div>
+                      <div class="tab-pane fade" id="pills-absm30" role="tabpanel" aria-labelledby="pills-profile-tab">ABS-M30 brings the familiarity and versatility of ABS material (acrylonitrile butadiene styrene) to the FDM 3D printing plastics lineup. It’s an ideal material for form and fit checks, functional prototyping and other 3D printing applications. ABS-M30 is characterized by its strength and toughness, while being lightweight and resilient. For general-use 3D printing, ABS-M30 is the optimal choice, blending utility and economy.</div>
+                      <div class="tab-pane fade" id="pills-1010cg" role="tabpanel" aria-labelledby="pills-contact-tab">ULTEM™ 1010 resin is a high-performance polyetherimide (PEI) thermoplastic. It has high heat resistance while exhibiting the lowest coefficient of thermal expansion among FDM materials. Combined with high strength properties, ULTEM 1010 resin is a perfect material for demanding and specialized applications like lightweight composite tooling.</div>
+                    </div>
+                </ul>
+      
+              <h5>Enter Volume: </h5>
+              <div style="margin: 10px;">
+              <div class="input-group mb-3">
+                <input id="FortusvolumeInput" type="text" class="form-control" placeholder="Volume (cm&sup3;)" aria-label="Volume (mm^3)" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button" onclick="CalculateFortus()">Calculate</button>
+                </div>
+              </div></div>
+
+              <h5>Calculated Cost: </h5>
+              <figure class="text-center"><h3 id="fortus_finalcost">£0.00</h3></figure>
+        </div>
+
+        <!-- Form Tab-->
+        <!-- ["draft","special","Dental SG", "Dental LT Clear", "Castable", "strong", "flexible"] -->
+        <div style="margin: 5px; padding:10px; border-style: solid; border-width: 1px; border-radius: 5px; border-color: black;" class="tab-pane fade" id="Form" role="tabpanel" aria-labelledby="profile-tab">
+
+          <h5>Select Material: </h5><ul style="margin: 10px;" class="nav nav-pills mb-3" id="pills-tab" role="tablist">           
+            <li  class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-draft-tab" data-bs-toggle="pill" data-bs-target="#pills-draft" type="button" role="tab" aria-controls="pills-draft" aria-selected="true">White/Black/Grey/Clear/Dental model</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-special-tab" data-bs-toggle="pill" data-bs-target="#pills-special" type="button" role="tab" aria-controls="pills-special" aria-selected="false">Dental/High Temp/Rigid/Elastic</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-Dental-SG-tab" data-bs-toggle="pill" data-bs-target="#pills-Dental-SG" type="button" role="tab" aria-controls="pills-Dental-SG" aria-selected="false">Dental SG</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-DentalLTClear-tab" data-bs-toggle="pill" data-bs-target="#pills-DentalLTClear" type="button" role="tab" aria-controls="pills-DentalLTClear" aria-selected="false">Dental LT Clear</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-Castable-tab" data-bs-toggle="pill" data-bs-target="#pills-Castable" type="button" role="tab" aria-controls="pills-Castable" aria-selected="false">Castable</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="pills-strong-tab" data-bs-toggle="pill" data-bs-target="#pills-strong" type="button" role="tab" aria-controls="pills-strong" aria-selected="false">Tough/Grey Pro/Durable</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="pills-flexible-tab" data-bs-toggle="pill" data-bs-target="#pills-flexible" type="button" role="tab" aria-controls="pills-flexible" aria-selected="false">Flexible</button>
+            </li>
+            <div style="margin-top: 10px;" class="tab-content" id="pills-tabContent">
+                  <div class="tab-pane fade show active" id="pills-draft" role="tabpanel" aria-labelledby="pills-draft-tab">Draft Resin prints up to four times faster than Formlabs standard materials, making it ideal for initial prototypes and rapid iterations to help bring products to market faster. Parts printed with Draft Resin exhibit a smooth grey finish and high accuracy.</div>
+                  <div class="tab-pane fade" id="pills-special" role="tabpanel" aria-labelledby="pills-special-tab">High Temp is ideal for applications requiring the part to stand up to high temperatures with minimal loading. The material has almost no flex, however, so snap fits and living hinges are not suited for printing with High Temp Resin.</div>
+                  <div class="tab-pane fade" id="pills-Dental-SG" role="tabpanel" aria-labelledby="pills-Dental-SG-tab">Dental SG Resin is an autoclavable, biocompatible resin, designed for 3D printing precise Class 1 dental surgical guides to help dentists guarantee accurate implant placement.</div>
+                  <div class="tab-pane fade" id="pills-DentalLTClear" role="tabpanel" aria-labelledby="pills-DentalLTClear-tab">Dental LT Clear Resin is a Class IIa long-term biocompatible resin ideal for hard splints, occlusal guards, and other direct-printed long-term orthodontic appliances. This clear material polishes to high optical transparency. </div>
+                  <div class="tab-pane fade" id="pills-Castable" role="tabpanel" aria-labelledby="pills-Castable-tab">Castable Resin is an acrylate photopolymer, which requires a different process from a traditional wax schedule. Instead of melting at low temperatures, Castable Resin transitions to a gas. The recommended burnout schedule is designed and tested to allow Castable Resin to transition into a gas gradually. The slow transition reduces the possibility of the investment cracking due to rapid expansion of the printed part.</div>
+                  <div class="tab-pane fade" id="pills-strong" role="tabpanel" aria-labelledby="pills-strong-tab">Tough 2000 Resin is the strongest and stiffest material in our functional family of Tough and Durable Resins. Choose Tough 2000 Resin for prototyping strong and sturdy parts that should not bend easily.</div>
+                  <div class="tab-pane fade" id="pills-flexible" role="tabpanel" aria-labelledby="pills-flexible-tab">Flexible 80A Resin is a high-viscosity resin. It may take longer to fill the resin tank than other resins.
+
+                    Tall, thin features are difficult to print in Flexible 80A Resin because the material flexes during the peel process. If possible, orient the part closer to the build platform but at a 20° angle minimum.</div>
+                  
+                </div>
+            </ul>
+  
+          <h5>Enter Volume: </h5>
+          <div style="margin: 10px;">
+          <div class="input-group mb-3">
+            <input id="FormlabsVolumeInput" type="text" class="form-control" placeholder="Volume (cm&sup3;)" aria-label="Volume (mm^3)" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button" onclick="CalculateFormlabs()">Calculate</button>
+            </div>
+          </div></div>
+
+          <h5>Calculated Cost: </h5>
+          <figure class="text-center"><h3 id="formlabs_finalcost">£0.00</h3></figure>
+
+        </div>
+
+
+        <!-- Ultimaker Tab-->
+        <div style="margin: 5px; padding:10px; border-style: solid; border-width: 1px; border-radius: 5px; border-color: black;" class="tab-pane fade" id="Ultimaker" role="tabpanel" aria-labelledby="contact-tab">
+          <h5>Select Material: </h5><ul style="margin: 10px;" class="nav nav-pills mb-3" id="pills-tab" role="tablist">           
+            <li  class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-pla-tab" data-bs-toggle="pill" data-bs-target="#pills-pla" type="button" role="tab" aria-controls="pills-pla" aria-selected="true">PLA</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-abs-tab" data-bs-toggle="pill" data-bs-target="#pills-abs" type="button" role="tab" aria-controls="pills-abs" aria-selected="false">ABS</button>
+            </li>
+            <div style="margin-top: 10px;" class="tab-content" id="pills-tabContent">
+                  <div class="tab-pane fade show active" id="pills-pla" role="tabpanel" aria-labelledby="pills-home-tab">Ultimaker PLA (polylactic acid) is highly versatile, easy to print, and available in 11 colors. It prints reliably with high dimensional accuracy and a quality surface finish. This makes it an ideal material for a range of applications – from detailed prototypes to simple manufacturing jigs and gauges.</div>
+                  <div class="tab-pane fade" id="pills-abs" role="tabpanel" aria-labelledby="pills-profile-tab">Ultimaker ABS (acrylonitrile butadiene styrene) is formulated to minimize warping and ensure consistent interlayer adhesion. ABS material is a great choice for creating functional prototypes and complex end-use parts.</div>
+            </div>
+            </ul>
+  
+          <h5>Enter Volume: </h5>
+          <div style="margin: 10px;">
+          <div class="input-group mb-3">
+            <input id="UltimakervolumeInput" type="text" class="form-control" placeholder="Volume (cm&sup3;)" aria-label="Volume (mm^3)" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button" onclick="CalculateUltimaker()">Calculate</button>
+            </div>
+          </div></div>
+
+          <h5>Calculated Cost: </h5>
+          <figure class="text-center"><h3 id="ultimaker_finalcost">£0.00</h3></figure>
+
+        </div>
+      </div>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="assets/js/calc.js"></script>
+  </body>
+</html>
